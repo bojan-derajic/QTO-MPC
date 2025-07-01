@@ -1,5 +1,6 @@
 {
 	"name": "CasADi Workspace",
+	"remoteUser": "user",
 	"build": {
 		"context": "..",
 		"dockerfile": "../Dockerfile",
@@ -17,5 +18,16 @@
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
 		"--volume=${env:XAUTHORITY}:${env:XAUTHORITY}"
 	],
-	"postCreateCommand": ". scripts/install_HSL_lib.sh"
+	"postCreateCommand": "/bin/bash scripts/install_HSL_lib.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"mgesbert.python-path"
+			]
+		}
+	}
 }

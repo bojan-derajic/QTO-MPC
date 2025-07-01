@@ -434,7 +434,7 @@ Copyright (C) 2023 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/ubuntu/ros2_ws/ThirdParty-HSL'
+ac_pwd='/casadi_ws/ThirdParty-HSL'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/usr/bin/mkdir -p'
@@ -677,7 +677,7 @@ postuninstall_cmds=''
 finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
-sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/13 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
+sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/12 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
 configure_time_dlsearch_path='/lib /usr/lib /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu '
 configure_time_lt_sys_library_path=''
 hardcode_action='immediate'
@@ -935,8 +935,8 @@ S["am__EXEEXT_TRUE"]="#"
 S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
 S["HSL_CFLAGS_NOPC"]=" "
-S["HSL_LFLAGS_NOPC"]="-lmetis -lm     -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/."\
-"./../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -lgfo"\
+S["HSL_LFLAGS_NOPC"]="-lmetis -lm     -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/."\
+"./../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -lgfo"\
 "rtran -lm -lquadmath -fopenmp"
 S["OPENMP_FCFLAGS"]="-fopenmp"
 S["OPENMP_CFLAGS"]=""
@@ -951,9 +951,9 @@ S["METISCHECK_LFLAGS"]="-lm "
 S["COIN_HAS_LAPACK_FALSE"]="#"
 S["COIN_HAS_LAPACK_TRUE"]=""
 S["HSL_PCFILES"]="lapack blas "
-S["HSL_LFLAGS"]="-llapack -lblas  -lmetis -lm     -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_"\
-"64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/"\
-"13/../../.. -lgfortran -lm -lquadmath -fopenmp"
+S["HSL_LFLAGS"]="-llapack -lblas  -lmetis -lm     -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_"\
+"64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/"\
+"12/../../.. -lgfortran -lm -lquadmath -fopenmp"
 S["COIN_HAS_DEPSF90_FALSE"]="#"
 S["COIN_HAS_DEPSF90_TRUE"]=""
 S["COIN_HAS_DEPSF_FALSE"]="#"
@@ -1023,8 +1023,8 @@ S["ADD_FCFLAGS"]=""
 S["ac_ct_FC"]="gfortran"
 S["FCFLAGS"]="-O2  -fopenmp"
 S["FC"]="gfortran"
-S["FLIBS"]=" -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib "\
-"-L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -lgfortran -lm -lqua"\
+S["FLIBS"]=" -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib "\
+"-L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -lgfortran -lm -lqua"\
 "dmath"
 S["ADD_FFLAGS"]=""
 S["COIN_HAS_F77_FALSE"]="#"
@@ -1065,12 +1065,12 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/usr/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /home/ubuntu/ros2_ws/ThirdParty-HSL/install-sh"
-S["MAKEINFO"]="${SHELL} '/home/ubuntu/ros2_ws/ThirdParty-HSL/missing' makeinfo"
-S["AUTOHEADER"]="${SHELL} '/home/ubuntu/ros2_ws/ThirdParty-HSL/missing' autoheader"
-S["AUTOMAKE"]="${SHELL} '/home/ubuntu/ros2_ws/ThirdParty-HSL/missing' automake-1.17"
-S["AUTOCONF"]="${SHELL} '/home/ubuntu/ros2_ws/ThirdParty-HSL/missing' autoconf"
-S["ACLOCAL"]="${SHELL} '/home/ubuntu/ros2_ws/ThirdParty-HSL/missing' aclocal-1.17"
+S["install_sh"]="${SHELL} /casadi_ws/ThirdParty-HSL/install-sh"
+S["MAKEINFO"]="${SHELL} '/casadi_ws/ThirdParty-HSL/missing' makeinfo"
+S["AUTOHEADER"]="${SHELL} '/casadi_ws/ThirdParty-HSL/missing' autoheader"
+S["AUTOMAKE"]="${SHELL} '/casadi_ws/ThirdParty-HSL/missing' automake-1.17"
+S["AUTOCONF"]="${SHELL} '/casadi_ws/ThirdParty-HSL/missing' autoconf"
+S["ACLOCAL"]="${SHELL} '/casadi_ws/ThirdParty-HSL/missing' aclocal-1.17"
 S["VERSION"]="2.2.5"
 S["PACKAGE"]="coinhsl"
 S["CYGPATH_W"]="echo"

@@ -1,0 +1,37 @@
+problem: "realtimedbastar"
+robot: differential drive
+states: [x, y , theta]
+start: [0.0, 0.0, 0.0]
+goal: [0.0, -5.0, -np.pi/2]
+distance: squareroot((x2-x1)^2 + (y2-y1)^2) + abs(theta2-theta1)
+min_distance_to_goal: 0.5
+# memory: 5
+wheel_radius: 16 # mm
+distance_between_wheels: 89 # mm
+max_vel_leftwheel: 157.08 # rad/s
+min_vel_leftwheel: 15 # rad/s
+max_vel_rightwheel: 77.08 # rad/s
+min_vel_rightwheel: 15 # rad/s
+
+# In SMA*, we take feedback from the environment at the beginning of each primitive only.
+
+time_step: 0.01 # s
+environment:
+  max: [20, 20]
+  min: [-20, -20]
+
+  output:
+    - name: "trajectory"
+      type: "array"
+      params:
+        - name: "x"
+          type: "float"
+          size: 1000
+        - name: "y"
+          type: "float"
+          size: 1000
+        - name: "theta"
+          type: "float"
+          size: 1000
+    - name: "total_time"
+      type: "float"

@@ -1,0 +1,21 @@
+{
+	"name": "CasADi Workspace",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile",
+	},
+	"workspaceFolder": "/casadi_ws",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/casadi_ws,type=bind",
+	"runArgs": [
+		"--privileged",
+		"--net=host",
+		"--gpus=all",
+		"--env=DISPLAY=${env:DISPLAY}",
+		"--env=QT_X11_NO_MITSHM=1",
+		"--env=XAUTHORITY=${env:XAUTHORITY}",
+		"--env=NVIDIA_DRIVER_CAPABILITIES=all",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+		"--volume=${env:XAUTHORITY}:${env:XAUTHORITY}"
+	],
+	"postCreateCommand": ". scripts/install_HSL_lib.sh"
+}

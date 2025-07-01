@@ -1,0 +1,99 @@
+Legal Notice
+============
+ALL USAGE OF HSL IS SUBJECT TO LICENCE. PLEASE REFER TO THE FILE 'LICENCE'
+DISTRIBUTED WITH THIS SOFTWARE. THIS LICENCE APPLIES TO ALL FILES UNLESS
+OTHERWISE INDICATED. IF YOU OBTAINED A COPY OF THIS SOFTWARE WITHOUT THIS FILE,
+PLEASE CONTACT HSL@STFC.AC.UK TO OBTAIN ONE.
+
+In particular:
+1) You are obliged to cite HSL in any publication or report as:
+   "HSL, a collection of Fortran codes for large-scale scientific computation.
+    See https://www.hsl.rl.ac.uk/"
+2) You may not make available to others the software in any form, either as
+   source or as a precompiled object.
+
+Introduction
+============
+Thanks for downloading HSL software. You can find out more information about
+HSL by visiting our website: https://www.hsl.rl.ac.uk/
+
+This package is intended to be used exclusively with IPOPT. To obtain the full
+version of the packages please download them from the HSL web address above.
+
+Installation
+============
+
+We now provide binaries for users of some systems. The easiest way to use
+CoinHSL is via these which are available from the STFC IP Store
+(https://licences.stfc.ac.uk/product/coin-hsl).
+
+These binaries require some additional third party binaries to work. Julia
+maintain up to date versions of these for all systems, which we distribute
+with our binaries. To update these, download and unzip the tar.gz file
+matching the name of the CoinHSL folder:
+- METIS: https://github.com/JuliaBinaryWrappers/METIS_jll.jl/releases/latest
+- OpenBLAS: https://github.com/JuliaBinaryWrappers/OpenBLAS32_jll.jl/releases/latest
+- Compiler Support Libraries: https://github.com/JuliaBinaryWrappers/CompilerSupportLibraries_jll.jl/releases/latest
+
+To build CoinHSL you will need the Meson (https://mesonbuild.com/) build
+system and compilers for both Fortran and C. Libraries for BLAS, LAPACK, and
+METIS will also be required.
+
+Once you have these dependencies you can run:
+
+   meson setup builddir --buildtype=release --prefix=$prefix
+   meson compile -C builddir
+   meson install -C builddir
+
+If Meson fails to detect your BLAS, LAPACK, or METIS, you can define them
+explicitly with the following options in the setup call:
+
+    -Dlibblas=$(libblas_liblapack_name)
+    -Dliblapack=$(libblas_liblapack_name)
+    -Dlibmetis=$(libmetis_name)
+
+If you are unable to use either the binaries or Meson, the installation
+instructions provided by IPOPT are based on a different toolchain and may be
+of interest.
+In particular, you should download the COIN-OR ThirdPary-HSL build system from:
+  https://github.com/coin-or-tools/ThirdParty-HSL
+please follow the detailed installation instructions given there.
+
+If you opt to build the library yourself, ensure that the library
+libcoinhsl.so can be found by both the linker and the dynamic library loader.
+We recommend this is done using the `hsllib` option in IPOPT.  Alternatively,
+you could either add the path to the ldconfig configuration, or explicitly set
+the environment variable LD_LIBRARY_PATH.
+
+Note: IPOPT searches for libhsl.so by default whereas the build tools
+      generate libcoinhsl.so. Renaming the file or using the `hsllib` option
+      should be sufficient to avoid issues with this.
+
+Other libraries
+===============
+
+To use libcoinhsl.so you MUST ensure that:
+* Both HSL and IPOPT are compiled with compatible C++ and Fortran compilers,
+   for example g++ and gfortran (recommended under linux).
+* A BLAS library is available. This library is usually supplied by your
+   computer processor vendor (eg Intel MKL), and using a good one is critical
+   to performance.
+   If you are unable to locate a vendor BLAS then you should use either
+   the OpenBLAS or ATLAS BLAS (usually available as part of your linux
+   distribution).
+   Using the reference BLAS from netlib can often be ten times slower.
+
+It is RECOMMENDED that:
+* The METIS matrix ordering routines are available. This can be achieved by
+   compiling them as part of IPOPT, see the IPOPT documentation for futher
+   details.
+
+Building Windows DLLs
+=====================
+
+We make use of cross-compilation to generate the Windows binaries we make
+available. As such we have not built CoinHSL on Windows since upgrading our
+build system.
+
+If you do choose to build your own DLLs using Meson we would welcome any and
+all feedback to hsl@stfc.ac.uk.

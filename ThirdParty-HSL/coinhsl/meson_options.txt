@@ -1,0 +1,45 @@
+option('modules',
+       type : 'boolean',
+       value : true,
+       description : 'Install Fortran modules')
+
+option('libmetis',
+       type : 'string',
+       value : 'metis',
+       description : 'option for METIS library switching')
+
+option('libmetis_path',
+       type : 'array',
+       value : [],
+       description : 'Additional directories to search METIS library')
+
+option('libmetis_include',
+       type : 'array',
+       value : [],
+       description : 'Additional directories to search the METIS header files')
+
+option('libmetis_version',
+       type : 'combo',
+       choices : ['4', '5'],
+       value : '5',
+       description : 'Version of the METIS library')
+
+option('libblas',
+       type : 'string',
+       value : 'blas',
+       description : 'option for BLAS library switching')
+
+option('libblas_path',
+       type : 'array',
+       value : [],
+       description : 'Additional directories to search BLAS library')
+
+option('liblapack',
+       type : 'string',
+       value : 'lapack',
+       description : 'option for BLAS library switching')
+
+option('liblapack_path',
+       type : 'array',
+       value : [],
+       description : 'Additional directories to search LAPACK library')

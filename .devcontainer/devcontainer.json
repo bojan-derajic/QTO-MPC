@@ -3,7 +3,7 @@
 	"remoteUser": "user",
 	"build": {
 		"context": "..",
-		"dockerfile": "../Dockerfile",
+		"dockerfile": "../Dockerfile"
 	},
 	"workspaceFolder": "/casadi_ws",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/casadi_ws,type=bind",
@@ -18,7 +18,6 @@
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
 		"--volume=${env:XAUTHORITY}:${env:XAUTHORITY}"
 	],
-	"postCreateCommand": "/bin/bash scripts/install_HSL_lib.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [

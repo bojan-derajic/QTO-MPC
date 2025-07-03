@@ -2,12 +2,12 @@ problem: "realtimedbastar"
 robot: differential drive
 states: [x, y , theta]
 start: [0.0, 0.0, 0.0]
-goal: [0.0, -5.0, -np.pi/2]
+goal: [0.0, -5.0, -1.5707963267948966]
 distance: squareroot((x2-x1)^2 + (y2-y1)^2) + abs(theta2-theta1)
 min_distance_to_goal: 0.5
 # memory: 5
-wheel_radius: 16.0 # mm
-distance_between_wheels: 89.0 # mm
+wheel_radius: 16 # mm
+distance_between_wheels: 89 # mm
 max_vel_leftwheel: 157.08 # rad/s
 min_vel_leftwheel: 15 # rad/s
 max_vel_rightwheel: 77.08 # rad/s
